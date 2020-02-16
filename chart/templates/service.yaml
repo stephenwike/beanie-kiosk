@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: {{ .Values.name }}
   labels:
-    app: fss
+    {{- include "app.labels" . | nindent 4 }}
 spec:
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 3000
   selector:
-    app: fss
+    {{- include "app.labels" . | nindent 4 }}
