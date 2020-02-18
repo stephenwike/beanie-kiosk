@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: Always
         image: stephenwike/fss-games-beanie-kiosk:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000
