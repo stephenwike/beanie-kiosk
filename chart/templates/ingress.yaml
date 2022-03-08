@@ -5,13 +5,12 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: {{ .Values.name }}
-    servicePort: 3000
   rules:
-  - http:
+  - host: "fireshellstudio.com"
+    http:
       paths:
-      - path: /test
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: {{ .Values.name }}
+          serviceName: beanie-kiosk-service
           servicePort: 3000
