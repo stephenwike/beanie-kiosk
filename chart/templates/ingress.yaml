@@ -5,13 +5,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: {{ .Values.name }}
-    servicePort: 3000
   rules:
   - http:
       paths:
-      - path: /test
+      - path: /beanie
         backend:
           serviceName: {{ .Values.name }}
           servicePort: 3000
